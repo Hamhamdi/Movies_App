@@ -1,0 +1,29 @@
+<div class="container-fluid">
+    
+</div>
+<div class="card-wrapper">
+    <div class="rating-circle">{{item.vote_average|  number: '1.0-0' }}</div>
+
+    <div class="card my-2">
+      <a [routerLink]="['/movie',item.id]">
+        <div class="position-relative" style="height: 300px;">
+          <img class="card-img-top" [src]="'https://image.tmdb.org/t/p/w300'+item.poster_path" [alt]="item.original_title"
+               style="object-fit: cover; width: 100%; height: 100%;">
+          <div class="position-absolute top-0 start-0 w-100 h-100 bg-dark opacity-75 d-flex justify-content-center align-items-center invisible">
+            <p class="text-light m-0">View more...</p>
+          </div>
+        </div>
+      </a>
+      <div class="card-body">
+        <h6 class="card-title">{{item.original_title}}</h6>
+      </div>
+      <div class="d-flex justify-content-start">
+        <h6 *ngIf="item.release_date" style="font-size:small; width:60px;margin-left: -100px;" class="badge bg-primary">{{item.release_date | date:'yyyy' }}</h6>
+        <h6 *ngIf="!item.release_date" style="font-size:small;" class="card-text">Unknown</h6>
+      </div>
+    </div>
+    <!-- Add more cards here -->
+  </div>
+  
+  
+  

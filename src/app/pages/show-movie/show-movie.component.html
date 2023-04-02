@@ -1,0 +1,115 @@
+<div [style.background-image]="'url(https://image.tmdb.org/t/p/original'+movie.backdrop_path+')'" class="first ">
+  <div class="overlay"></div>
+
+  <img src="https://image.tmdb.org/t/p/w500{{movie.poster_path}}" alt="{{movie.title}}" class="  rounded second">
+    
+  <div style="color:mintcream;" class="third">
+    <h3 class="movie-title">
+      {{movie.title}}
+      <span style="font-size: 0.5em; font-style: italic;color:mintcream;">({{movie.release_date | date:'yyyy'}})</span>
+    </h3>
+    
+    <ul class="list-inline movie-genres">
+      <li *ngFor="let genre of movie.genres" class="list-inline-item badge bg-primary">{{genre.name}} </li> ({{movie.runtime | time}})
+    </ul>
+    <hr>
+    <p class="movie-overview">{{movie.overview}}</p>
+    <div class="row movie-details-list">
+      
+  
+    
+      <div class="col-sm-4">Vote Average:</div>
+      <div class="col-sm-4">
+       
+        <span *ngIf="movie.vote_average >= 1">
+                    <i style="color:gold" class="fa fa-star "></i>
+
+        </span>
+        <span *ngIf="movie.vote_average >= 2">
+                    <i style="color:gold" class="fa fa-star "></i>
+
+        </span>
+        <span *ngIf="movie.vote_average >= 3">
+                    <i style="color:gold" class="fa fa-star "></i>
+
+        </span>
+        <span *ngIf="movie.vote_average >= 4">
+                    <i style="color:gold" class="fa fa-star "></i>
+
+        </span>
+        <span *ngIf="movie.vote_average >= 5">
+                    <i style="color:gold" class="fa fa-star "></i>
+
+        </span>
+        <span *ngIf="movie.vote_average >= 6">
+                    <i style="color:gold" class="fa fa-star "></i>
+
+        </span>
+        <span *ngIf="movie.vote_average >= 7">
+                    <i style="color:gold" class="fa fa-star "></i>
+
+        </span>
+        <span *ngIf="movie.vote_average >= 8">
+                    <i style="color:gold" class="fa fa-star "></i>
+
+        </span>
+        <span *ngIf="movie.vote_average >= 9">
+                    <i style="color:gold" class="fa fa-star "></i>
+
+        </span>
+        {{ movie.vote_average }}          
+
+      </div>
+    
+ 
+      
+   
+    </div>  
+    <div class="mt-3">
+        <a style="text-decoration: none;" class="btn btn-outline-primary" id="watch-trailer" (click)="watchTrailer()" target="_blank" rel="noopener noreferrer">
+          <i style="color: white" class="fa fa-play"></i> Play Trailer
+        </a>
+      </div>
+
+  </div>
+</div>
+
+<div id="trailer-popup" style="display:none;">
+  <div id="overlay"></div>
+  <div id="trailer-container">
+    <iframe id="trailer-iframe"></iframe>
+  </div>
+</div>
+
+
+
+
+<hr>
+
+<div class="row">
+    <div class="col-md-6 mx-auto">
+
+        <ul class="nav nav-pills nav-fill">
+            <li class="nav-item">
+              <a class="nav-link" routerLinkActive="active" aria-current="page" routerLink="similar">Similar</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLinkActive="active" routerLink="actors">Actors</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLinkActive="active" routerLink="images">Images</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLinkActive="active" routerLink="videos">Videos</a>
+            </li>
+         
+          </ul>
+          
+    </div>
+</div>
+
+<hr>
+
+<router-outlet></router-outlet>
+
+

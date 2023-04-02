@@ -1,0 +1,7 @@
+.bg-gradient-primary-violet {
+    background: linear-gradient(to bottom, #007bff, #6c757d, #6f42c1);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  

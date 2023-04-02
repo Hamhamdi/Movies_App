@@ -1,0 +1,9 @@
+
+<div class="caontainer-fluid">
+
+    <div class="row">
+        <div class="col-md-6 my-2 mx-1" *ngFor="let video of videos">
+            <app-youtube-embed [title]="video.name" [key]="video.key"></app-youtube-embed>
+        </div>
+    </div>
+</div>

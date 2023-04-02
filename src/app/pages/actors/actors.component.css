@@ -1,0 +1,30 @@
+.actor-card {
+    height: 130px;
+    display: flex;
+    justify-content: center;
+    align-items: canter;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.card-img-right {
+    width: 100px; /* Adjust to your desired width */
+    height: 100px; /* Adjust to your desired height */
+    object-fit: cover;
+    border-radius: 100px;
+}
+
+.card-body {
+    padding-left: 20px;
+    text-align: left;
+}
+
+.card-title {
+    margin-bottom: 10px;
+}
+
+.card-text {
+    margin-bottom: 0;
+}

@@ -1,0 +1,27 @@
+<div class="container">
+
+<div class="row">
+    <div class="col-md-6 col-lg-4" *ngFor="let actor of actors">
+        <div class="card actor-card my-3">
+            <div class="d-flex">
+                <img 
+                    class="card-img-right " 
+                    [src]="resolveImage(actor.profile_path)" 
+                    alt="Title"
+                >
+                <div class="card-body flex-grow-1 align-items-center">
+                    <h6 class="card-title mt-4">
+                        {{ actor.name }} 
+                        <span class="badge bg-success " >
+                            {{ actor.popularity | number: '1.0-0' }}
+                        </span>
+                    </h6>
+                    <p class="card-text">
+                        {{ actor.biography }}
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>

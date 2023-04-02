@@ -1,0 +1,42 @@
+<div class="imagebg" style="background-image: url('../../../assets/tlEFuIlaxRPXIYVHXbOSAMCfWqk.jpeg');">
+    <div class="title text-left ">
+      <h2>Welcome</h2>
+      <h3>Millions of movies, TV shows and people to discover. Explore now.</h3>
+    </div>
+    <div class="form-group mb-2 search-container mt-auto">
+      <div class="input-container w-100">
+        <input type="text" class="form-control search" id="searchInput"  [(ngModel)]="query" placeholder="Search...">
+        <input type="submit" value="Search" (click)="searchMovie(query)" class="searchInput">
+      </div>
+    </div>
+</div>
+
+
+<div class="scrollable-div">
+    
+      
+    <div class="fade-element"></div>
+
+    <div class="row flex-nowrap">
+      <div class="col-md-3 mt-4 col-lg-2 col-xl-2 col-sm-6" *ngFor="let mv of movie">
+                <app-card [item]="mv"></app-card>
+      </div>
+    </div>
+</div>
+  
+  
+
+
+    <!-- <div  class="row" >
+        <div class="col-md-4 col-lg-3 col-xl-2 col-sm-6" *ngFor="let popular of popularMovies">
+            <app-card [item]="popular"></app-card>
+        </div>
+    </div> -->
+
+
+    <div class="row text-center my-3">
+        <div class="col-md-6 mx-auto">
+          <p-paginator (onPageChange)="paginate($event)" [rows]="20" [totalRecords]="752594"></p-paginator>
+        </div>
+      </div>
+  
